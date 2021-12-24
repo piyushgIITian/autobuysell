@@ -82,12 +82,12 @@ const AppRoutes = () => {
               <div className={classNames('app__page', `app__page--${status}`)}>
                 <Suspense fallback={<Fragment />}>
                   <Routes location={location} key={pathname}>
-                    <Route path="/portfolio3js/" element={<Home />} />
-                    <Route path="/portfolio3js/contact" element={<Contact />} />
-                    <Route path="/portfolio3js/projects/smart-sparrow" element={<ProjectSPR />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/projects/smart-sparrow" element={<ProjectSPR />} />
                    
                     {/* <Route path="/articles" element={<Articles} /> /> */}
-                    <Route path="/portfolio3js/uses" element={<Uses />} />
+                    <Route path="/uses" element={<Uses />} />
                     <Route path="*" element={<Page404 />} />
                   </Routes>
                 </Suspense>
