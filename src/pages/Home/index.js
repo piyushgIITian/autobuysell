@@ -161,7 +161,7 @@ const Home = () => {
         title="Revolutionizing XR with RShifts"
         description="RShifts is an interactive smartphone XR solution using cutting edge computer vision techniques to provide state of the art XR experiences on the go."
         buttonText="View Details"
-        buttonLink="/works/rshifts"
+        buttonLink="/projects/smart-sparrow"
         model={{
           type: 'laptop',
           alt: 'Creating XR the new reality',

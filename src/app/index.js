@@ -18,7 +18,7 @@ import { reflow } from 'utils/transition';
 
 const Home = lazy(() => import('pages/Home'));
 const Contact = lazy(() => import('pages/Contact'));
-const ProjectSPR = lazy(() => import('pages/Rshifts'));
+const ProjectSPR = lazy(() => import('pages/SmartSparrow'));
 const Page404 = lazy(() => import('pages/404'));
 const Uses = lazy(() => import('pages/Uses'));
 
@@ -84,7 +84,7 @@ const AppRoutes = () => {
                   <Routes location={location} key={pathname}>
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/works/rshifts" element={<ProjectSPR />} />
+                    <Route path="/projects/smart-sparrow" element={<ProjectSPR />} />
                    
                     {/* <Route path="/articles" element={<Articles} /> /> */}
                     <Route path="/uses" element={<Uses />} />
