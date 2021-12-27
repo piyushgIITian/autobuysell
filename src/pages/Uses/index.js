@@ -51,9 +51,7 @@ const Uses = () => {
                   <li>
                     <Link href="https://www.figma.com">Figma</Link> is my primary tool for
                     UI design these days. Made the switch from Sketch in 2020 and haven't
-                    looked back. I've also created{' '}
-                    <Link href="https://www.figma.com/@hamish">a few plugins</Link> that
-                    you can install.
+                    looked back.
                   </li>
                   <li>
                     Any motion graphics I create are created in Adobe After Effects. So
@@ -84,41 +82,17 @@ const Uses = () => {
                     my typeface of choice.
                   </li>
                   <li>
-                    Firefox is my main browser for both development and general use.
+                    Brave is my main browser for both development and general use.
                   </li>
                   <li>
                     <Link href="https://reactjs.org/">React</Link> is my front end
                     Javascript library of choice. The component-centric mental model is
-                    the first thing that truly made sense to me as a designer.
+                    the first thing that truly made sense to me as a programmer.
                   </li>
                   <li>
                     For 3D effects and image shaders I use{' '}
                     <Link href="https://threejs.org/">three.js</Link>. It has a bit of a
                     learning curve but you can do some really powerful stuff with it.
-                  </li>
-                  <li>
-                    For CSS I've used a myriad pre-processors and css-in-js solutions like
-                    styled-components, but these days I'm using vanilla CSS with{' '}
-                    <Link href="https://postcss.org/">PostCSS</Link> to get upcoming CSS
-                    features today.
-                  </li>
-                  <li>
-                    For Javascript animations I use{' '}
-                    <Link href="https://popmotion.io/api/">Popmotion Pure 8</Link>, it's a
-                    great way to add spring animations to three.js. All other animations
-                    are CSS with{' '}
-                    <Link href="https://reactcommunity.org/react-transition-group/">
-                      React Transition Group
-                    </Link>{' '}
-                    for enter/exit transitions.
-                  </li>
-                  <li>
-                    For building and testing UI components in isolation I use{' '}
-                    <Link href="https://storybook.js.org/">Storybook</Link>. Check out the{' '}
-                    <Link href="https://storybook.hamishw.com">
-                      storybook for this website
-                    </Link>
-                    .
                   </li>
                 </ul>
               </ProjectSectionText>
@@ -134,61 +108,55 @@ const Uses = () => {
                   <TableCell>
                     <strong>CPU</strong>
                   </TableCell>
-                  <TableCell>AMD Ryzen 5800x</TableCell>
+                  <TableCell>Intel Core i5 8th gen</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>GPU</strong>
                   </TableCell>
-                  <TableCell>MSI Gaming X Trio RTX 3080</TableCell>
+                  <TableCell>Nvidia Geforce GTX1050</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>Memory</strong>
                   </TableCell>
-                  <TableCell>GSkill 32GB DDR4 3600mhz CAS 18</TableCell>
+                  <TableCell>16Gb DDR4</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>Motherboard</strong>
                   </TableCell>
-                  <TableCell>MSI B550 Tomahawk</TableCell>
+                  <TableCell>Asus FX505GD 1.0</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>Monitor</strong>
                   </TableCell>
-                  <TableCell>1440p IPS 144hz LG 27GL850</TableCell>
+                  <TableCell>Generic PnP monitor</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>Keyboard</strong>
                   </TableCell>
-                  <TableCell>Logitech MX Keys</TableCell>
+                  <TableCell>Blue Switch Mechanical</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>Mouse</strong>
                   </TableCell>
-                  <TableCell>Logitech G403</TableCell>
+                  <TableCell>Logitech M90</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>Laptop</strong>
                   </TableCell>
-                  <TableCell>2015 Macbook Pro</TableCell>
+                  <TableCell>Asus Tuf FX505GD</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>
                     <strong>Headphones</strong>
                   </TableCell>
-                  <TableCell>Audio Technica ATH-M50x/Apple Airpods</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>
-                    <strong>Microphone</strong>
-                  </TableCell>
-                  <TableCell>Blue Yeti</TableCell>
+                  <TableCell>Realme Buds Air 2</TableCell>
                 </TableRow>
               </Table>
             </ProjectTextRow>
