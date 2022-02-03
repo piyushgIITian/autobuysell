@@ -10,7 +10,7 @@ import Input from 'components/Input';
 import Section from 'components/Section';
 import Text from 'components/Text';
 import { tokens } from 'components/ThemeProvider/theme';
-import { useFormInput, useRouteTransition, useScrollRestore } from 'hooks';
+import { useFormInput, useRouteTransition} from 'hooks';
 import { useCallback, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Transition, TransitionGroup } from 'react-transition-group';
