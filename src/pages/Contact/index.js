@@ -52,7 +52,8 @@ const Contact = () => {
   const [sending, setSending] = useState(false);
   const [complete, setComplete] = useState(false);
   const [statusError, setStatusError] = useState('');
-  useScrollRestore();
+
+  
 
   const onSubmit = useCallback(
     async event => {
@@ -64,12 +65,10 @@ const Contact = () => {
       try {
         setSending(true);
 
-        const response = await fetch('https://smtp.gmail.com', {
+        const response = await fetch('https://formcarry.com/s/qyUQj3zYHC9', {
           method: 'POST',
           mode: 'cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
           body: JSON.stringify({
             email: email.value,
             message: message.value,
@@ -141,6 +140,7 @@ const Contact = () => {
                   autoComplete="email"
                   label="Your Email"
                   type="email"
+                  name = "email"
                   maxLength={512}
                   {...email}
                 />
@@ -153,6 +153,7 @@ const Contact = () => {
                   style={getDelay(tokens.base.durationS, initDelay)}
                   autoComplete="off"
                   label="Message"
+                  name = "message"
                   maxLength={4096}
                   {...message}
                 />
