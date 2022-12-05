@@ -23,7 +23,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 
-const disciplines = ['Designer', 'Gamer', 'Researcher', 'Enthusiast', 'IITian'];
+const disciplines = ['Designer', 'Gamer', 'Researcher', 'Developer', 'IITian'];
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -180,7 +180,7 @@ const Home = () => {
           visible={visibleSections.includes(projectOne.current)}
           index={2}
           title="Creating the future of Ar with Flam"
-          description="Working as a computer vision engineer, developed a Cloud image target recognition arcitecture with a three member team"
+          description="Worked as a computer vision engineer, developed a Cloud image target recognition arcitecture with a three member team"
           buttonText="View Website"
           buttonLink="https://www.flamapp.com/"
           model={{
