@@ -29,9 +29,9 @@ const ProfileText = ({ status, titleId }) => (
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      I’m Piyush, currently I live in Bengaluru working as a computer vision engineer at{' '}
-      <Link href="https://www.flamapp.com">Flam</Link>. My works include Augmented reality, computer vision
-      , and virtual reality. Being comfortable with code allows me to rapidly
+      I’m Piyush Gautam, currently I am learning backend and actively looking for backend development roles. You can refer to my linkedin profile at {' '}
+      <Link href="https://www.linkedin.com/in/piyush-gautam-tg">LinkedIn</Link>. My skills include Machine Learning, Deep Learning, Computer vision, FullStack Development, 
+      Game development, and virtual reality. Being comfortable with code allows me to rapidly
       prototype and validate experiences. If you're interested in the tools and software I
       use check out my <Link href="/uses">uses page</Link>.
     </Text>
@@ -40,8 +40,8 @@ const ProfileText = ({ status, titleId }) => (
       size="l"
     >
       In my spare time I like to play Dota 2, watch netflix, and{' '}
-      make blogs. I’m always up for hearing
-      about new projects, so feel free to drop me a line.
+      make blogs. I’m always up for collaborating
+      on new projects, so feel free to drop me a text.
     </Text>
   </Fragment>
 );
