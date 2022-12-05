@@ -153,27 +153,7 @@ const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-       <ProjectSummary
-        id="project-1"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
-        index={1}
-        title="Revolutionizing XR with RShifts"
-        description="RShifts is an interactive smartphone XR solution using cutting edge computer vision techniques to provide state of the art XR experiences on the go."
-        buttonText="View Details"
-        buttonLink="/projects/smart-sparrow"
-        model={{
-          type: 'laptop',
-          alt: 'Creating XR the new reality',
-          textures: [
-            {
-              src: sliceTexture,
-              srcSet: `${sliceTexture} 980w, ${sliceTextureLarge} 1376w`,
-              placeholder: sliceTexturePlaceholder,
-            },
-          ],
-        }}
-      />
+    
        <ProjectSummary
           id="project-2"
           sectionRef={projectOne}
