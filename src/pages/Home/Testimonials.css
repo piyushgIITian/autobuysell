@@ -1,0 +1,131 @@
+.testimonials {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--colorBackgroundLight);
+
+  @media (--mediaTablet) {
+    & {
+      padding-top: 50px;
+      height: auto;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (--mediaMobile) {
+    & {
+      margin-top: 0;
+      padding-top: 90px;
+      padding-left: 25px;
+      padding-right: 25px;
+      overflow-x: hidden;
+    }
+  }
+}
+
+.testimonials__content {
+  max-width: var(--maxWidthL);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials__title {
+  text-align: center;
+  margin-bottom: var(--space3XL);
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationM);
+}
+
+.testimonials__title--entered {
+  opacity: 1;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spaceL);
+  width: 100%;
+  margin-bottom: var(--spaceXL);
+
+  @media (--mediaMobile) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.testimonial__item {
+  background-color: var(--colorBackground);
+  border-radius: 8px;
+  padding: var(--spaceL);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(var(--spaceL));
+  transition: opacity var(--durationL) ease, transform var(--durationL) ease;
+}
+
+.testimonial__item--entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.testimonial__text {
+  flex: 1;
+  margin-bottom: var(--spaceL);
+  font-style: italic;
+  color: var(--colorTextBody);
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial__image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: var(--spaceM);
+  object-fit: cover;
+}
+
+.testimonial__name {
+  margin: 0;
+  font-size: calc((18 / 16) * 1rem);
+  color: var(--colorTextTitle);
+}
+
+.testimonials__dots {
+  display: flex;
+  gap: var(--spaceS);
+  margin-top: var(--spaceL);
+}
+
+.testimonials__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--colorTextLight);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.testimonials__dot--active {
+  background-color: rgb(var(--rgbPrimary));
+}

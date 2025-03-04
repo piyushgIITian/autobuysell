@@ -1,0 +1,121 @@
+.partners {
+  width: 100%;
+  min-height: 60vh;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+
+  @media (--mediaTablet) {
+    & {
+      padding-top: 50px;
+      height: auto;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (--mediaMobile) {
+    & {
+      margin-top: 0;
+      padding-top: 60px;
+      padding-left: 25px;
+      padding-right: 25px;
+      overflow-x: hidden;
+    }
+  }
+}
+
+.partners__content {
+  max-width: var(--maxWidthL);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partners__title {
+  text-align: center;
+  margin-bottom: var(--space3XL);
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationM);
+}
+
+.partners__title--entered {
+  opacity: 1;
+}
+
+.partners__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spaceXL);
+  width: 100%;
+  
+  @media (--mediaTablet) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (--mediaMobile) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spaceL);
+    }
+  }
+}
+
+.partners__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(var(--spaceM));
+  transition: opacity var(--durationL) ease, transform var(--durationL) ease;
+}
+
+.partners__item--entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.partners__item--1 {
+  transition-delay: 100ms;
+}
+
+.partners__item--2 {
+  transition-delay: 200ms;
+}
+
+.partners__item--3 {
+  transition-delay: 300ms;
+}
+
+.partners__item--4 {
+  transition-delay: 400ms;
+}
+
+.partners__item--5 {
+  transition-delay: 500ms;
+}
+
+.partners__item--6 {
+  transition-delay: 600ms;
+}
+
+.partners__item--7 {
+  transition-delay: 700ms;
+}
+
+.partners__logo {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.partners__item:hover .partners__logo {
+  filter: grayscale(0%);
+}

@@ -12,35 +12,20 @@ import Heading from 'components/Heading';
 import Section from 'components/Section';
 import { useTheme } from 'components/ThemeProvider';
 import VisuallyHidden from 'components/VisuallyHidden';
+import { Button } from 'components/Button';
 import './Intro.css';
 
 const DisplacementSphere = lazy(() => import('pages/Home/DisplacementSphere'));
 
-function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) {
+function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
   const theme = useTheme();
-  const [disciplineIndex, setDisciplineIndex] = useState(0);
   const windowSize = useWindowSize();
   const prevTheme = usePrevious(theme);
-  const introLabel = [disciplines.slice(0, -1).join(', '), disciplines.slice(-1)[0]].join(
-    ', and '
-  );
-  const currentDisciplines = disciplines.filter(
-    (item, index) => index === disciplineIndex
-  );
   const titleId = `${id}-title`;
-
-  useInterval(
-    () => {
-      const index = (disciplineIndex + 1) % disciplines.length;
-      setDisciplineIndex(index);
-    },
-    5000,
-    theme.themeId
-  );
 
   useEffect(() => {
     if (prevTheme && prevTheme.themeId !== theme.themeId) {
-      setDisciplineIndex(0);
+      // Reset any theme-specific state here
     }
   }, [theme.themeId, prevTheme]);
 
@@ -73,10 +58,10 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                 className={classNames('intro__name', `intro__name--${status}`)}
                 id={titleId}
               >
-                <DecoderText text="Piyush Gautam" start={!prerender} delay={300} />
+                <DecoderText text="Unleash The Power" start={!prerender} delay={300} />
               </h1>
               <Heading level={0} as="h2" className="intro__title">
-                <VisuallyHidden className="intro__title-label">{`Developer + ${introLabel}`}</VisuallyHidden>
+                <VisuallyHidden className="intro__title-label">Of AI Trading</VisuallyHidden>
                 <span
                   aria-hidden
                   className={classNames('intro__title-row', {
@@ -90,45 +75,32 @@ function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...rest }) 
                     )}
                     style={{ '--delay': tokens.base.durationXS }}
                   >
-                    Developer
+                    Of AI Trading
                   </span>
-                  <span
-                    className={classNames(
-                      'intro__title-line',
-                      `intro__title-line--${status}`
-                    )}
-                  />
                 </span>
-                <TransitionGroup
-                  className={classNames('intro__title-row', {
-                    'intro__title-row--hidden': prerender,
-                  })}
-                  component="span"
-                >
-                  {currentDisciplines.map(item => (
-                    <Transition
-                      appear
-                      timeout={{ enter: 3000, exit: 2000 }}
-                      key={item}
-                      onEnter={reflow}
-                    >
-                      {wordStatus => (
-                        <span
-                          aria-hidden
-                          className={classNames(
-                            'intro__title-word',
-                            'intro__title-word--plus',
-                            `intro__title-word--${wordStatus}`
-                          )}
-                          style={{ '--delay': tokens.base.durationL }}
-                        >
-                          {item}
-                        </span>
-                      )}
-                    </Transition>
-                  ))}
-                </TransitionGroup>
               </Heading>
+              <div className="intro__subtitle">
+                <h3 className={classNames('intro__subtitle-text', `intro__subtitle-text--${status}`)}>
+                  Autobuysell - Your Trusted Partner In Automated Trading.
+                </h3>
+              </div>
+              <div className="intro__buttons">
+                <Button
+                  className={classNames('intro__button', `intro__button--${status}`)}
+                  href="https://autobuysell.io/register"
+                  iconHoverShift
+                >
+                  Get Started
+                </Button>
+                <Button
+                  className={classNames('intro__button', `intro__button--${status}`)}
+                  secondary
+                  href="https://youtu.be/RD9MueV6cHE?si=NqnhgrmpG7ygCI1E"
+                  iconHoverShift
+                >
+                  How It Works?
+                </Button>
+              </div>
             </header>
             {windowSize.width > media.tablet && (
               <div

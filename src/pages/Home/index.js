@@ -1,29 +1,30 @@
 import './index.css';
 
-import gamestackTexture2Large from 'assets/gamestack-list-large.jpg';
+import gamestackTexture2Large from 'assets/autobuysell-logos-large.png';
 import gamestackTexture2Placeholder from 'assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from 'assets/gamestack-list.jpg';
-import gamestackTextureLarge from 'assets/gamestack-login-large.jpg';
+import gamestackTexture2 from 'assets/autobuysell-logos.png';
+import gamestackTextureLarge from 'assets/autobuysell-design-large.jpg';
 import gamestackTexturePlaceholder from 'assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from 'assets/gamestack-login.jpg';
+import gamestackTexture from 'assets/autobuysell-design.jpg';
 import iphone11 from 'assets/iphone-11.glb';
 import macbookPro from 'assets/macbook-pro.glb';
-import sliceTextureLarge from 'assets/slice-app-large.png';
+import sliceTextureLarge from 'assets/autobuysell-robot-large.jpg';
 import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
-import sliceTexture from 'assets/slice-app.png';
-import sprTextureLarge from 'assets/spr-lesson-builder-dark-large.jpg';
+import sliceTexture from 'assets/autobuysell-robot.jpg';
+import sprTextureLarge from 'assets/autobuysell-design-large.jpg';
 import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from 'assets/spr-lesson-builder-dark.jpg';
+import sprTexture from 'assets/autobuysell-design.jpg';
 import Footer from 'components/Footer';
 import { usePrefersReducedMotion, useRouteTransition } from 'hooks';
-import Intro from 'pages/Home/Intro';
-import Profile from 'pages/Home/Profile';
-import ProjectSummary from 'pages/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
-
-const disciplines = ['Designer', 'Gamer', 'Researcher', 'Developer', 'IITian'];
+import Intro from './Intro';
+import Profile from './Profile';
+import ProjectSummary from './ProjectSummary';
+import Testimonials from './Testimonials';
+import Partners from './Partners';
+import MobileApp from './MobileApp';
 
 const Home = () => {
   const { status } = useRouteTransition();
@@ -32,14 +33,22 @@ const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
-  const projectOne = useRef();
-  const projectTwo = useRef();
-  const projectThree = useRef();
-  const details = useRef();
+  const featuresSection = useRef();
+  const aboutSection = useRef();
+  const testimonialsSection = useRef();
+  const partnersSection = useRef();
+  const mobileAppSection = useRef();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const revealSections = [intro, projectOne, projectTwo, projectThree, details];
+    const revealSections = [
+      intro,
+      featuresSection,
+      aboutSection,
+      testimonialsSection,
+      partnersSection,
+      mobileAppSection,
+    ];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -63,7 +72,9 @@ const Home = () => {
     );
 
     revealSections.forEach(section => {
-      sectionObserver.observe(section.current);
+      if (section.current) {
+        sectionObserver.observe(section.current);
+      }
     });
 
     indicatorObserver.observe(intro.current);
@@ -82,7 +93,7 @@ const Home = () => {
 
     const handleHashchange = (hash, scroll) => {
       clearTimeout(scrollTimeout);
-      const hashSections = [intro, projectOne, details];
+      const hashSections = [intro, featuresSection, aboutSection];
       const hashString = hash.replace('#', '');
       const element = hashSections.filter(item => item.current.id === hashString)[0];
       if (!element) return;
@@ -139,10 +150,10 @@ const Home = () => {
   return (
     <div className="home">
       <Helmet>
-        <title>Piyush Gautam | Software Engineer</title>
+        <title>Autobuysell | Home</title>
         <meta
           name="description"
-          content="Portfolio of Piyush Gautam – a designer and software developer &amp; machine learning, ai and web development."
+          content="Autobuysell - Your Trusted Partner In Automated Trading."
         />
         <link rel="prefetch" href={iphone11} as="fetch" crossorigin="" />
         <link rel="prefetch" href={macbookPro} as="fetch" crossorigin="" />
@@ -150,44 +161,41 @@ const Home = () => {
       <Intro
         id="intro"
         sectionRef={intro}
-        disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
-    
-       <ProjectSummary
-          id="project-2"
-          sectionRef={projectOne}
-          visible={visibleSections.includes(projectOne.current)}
-          index={2}
-          title="Creating the future of Ar with Flam"
-          description="Worked as a computer vision engineer, developed a Cloud image target recognition arcitecture with a three member team"
-          buttonText="View Website"
-          buttonLink="https://www.flamapp.com/"
-          model={{
-            type: 'laptop',
-            alt: 'Cloud Recog Archi',
-            textures: [
-              {
-                src: sprTexture,
-                srcSet: `${sprTexture} 800w, ${sprTextureLarge} 1440w`,
-                placeholder: sprTexturePlaceholder,
-              },
-            ],
-          }}
-        />
       <ProjectSummary
-        id="project-3"
+        id="features"
+        sectionRef={featuresSection}
+        visible={visibleSections.includes(featuresSection.current)}
+        index={1}
+        title="Automation"
+        description="Automation is a powerful tool that can streamline processes, reduce human error, and improve efficiency."
+        buttonText="Get Started"
+        buttonLink="https://autobuysell.io/register"
+        model={{
+          type: 'laptop',
+          alt: 'Automation',
+          textures: [
+            {
+              src: sliceTexture,
+              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1440w`,
+              placeholder: sliceTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="algorithms"
         alternate
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
-        index={3}
-        title="Creating games for fun"
-        description="Was a member of computer graphics society in IIT Kharagpur and created games for fun"
-        buttonText="View Website"
-        buttonLink="https://cgliitkgp.github.io/"
+        visible={visibleSections.includes(featuresSection.current)}
+        index={2}
+        title="Algorithms"
+        description="Access a diverse range of pre-built strategies or create your own custom algorithms to tailor your trading approach."
+        buttonText="How It Works?"
+        buttonLink="https://youtu.be/RD9MueV6cHE?si=NqnhgrmpG7ygCI1E"
         model={{
           type: 'phone',
-          alt: 'cgl play store',
+          alt: 'Algorithms',
           textures: [
             {
               src: gamestackTexture,
@@ -202,12 +210,117 @@ const Home = () => {
           ],
         }}
       />
-       
-     
+      <ProjectSummary
+        id="risk-management"
+        visible={visibleSections.includes(featuresSection.current)}
+        index={3}
+        title="Risk Management"
+        description="Utilize stop-loss, take-profit, and position sizing tools to manage and mitigate risks, safeguarding your investments."
+        buttonText="Get Started"
+        buttonLink="https://autobuysell.io/register"
+        model={{
+          type: 'laptop',
+          alt: 'Risk Management',
+          textures: [
+            {
+              src: sprTexture,
+              srcSet: `${sprTexture} 800w, ${sprTextureLarge} 1440w`,
+              placeholder: sprTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="real-time"
+        alternate
+        visible={visibleSections.includes(featuresSection.current)}
+        index={4}
+        title="Real-time"
+        description="Stay up to date with live market data and execute orders instantly, ensuring you make informed, timely decisions."
+        buttonText="Get Started"
+        buttonLink="https://autobuysell.io/register"
+        model={{
+          type: 'phone',
+          alt: 'Real-time',
+          textures: [
+            {
+              src: gamestackTexture,
+              srcSet: `${gamestackTexture} 254w, ${gamestackTextureLarge} 508w`,
+              placeholder: gamestackTexturePlaceholder,
+            },
+            {
+              src: gamestackTexture2,
+              srcSet: `${gamestackTexture2} 254w, ${gamestackTexture2Large} 508w`,
+              placeholder: gamestackTexture2Placeholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="backtesting"
+        visible={visibleSections.includes(featuresSection.current)}
+        index={5}
+        title="Backtesting"
+        description="Analyze your strategies using historical data, assess performance, and fine-tune your algorithms for improved results."
+        buttonText="Get Started"
+        buttonLink="https://autobuysell.io/register"
+        model={{
+          type: 'laptop',
+          alt: 'Backtesting',
+          textures: [
+            {
+              src: sprTexture,
+              srcSet: `${sprTexture} 800w, ${sprTextureLarge} 1440w`,
+              placeholder: sprTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="customization"
+        alternate
+        visible={visibleSections.includes(featuresSection.current)}
+        index={6}
+        title="Customization"
+        description="Personalize your user interface and strategy settings to match your trading style, enhancing your overall trading experience."
+        buttonText="Get Started"
+        buttonLink="https://autobuysell.io/register"
+        model={{
+          type: 'phone',
+          alt: 'Customization',
+          textures: [
+            {
+              src: gamestackTexture,
+              srcSet: `${gamestackTexture} 254w, ${gamestackTextureLarge} 508w`,
+              placeholder: gamestackTexturePlaceholder,
+            },
+            {
+              src: gamestackTexture2,
+              srcSet: `${gamestackTexture2} 254w, ${gamestackTexture2Large} 508w`,
+              placeholder: gamestackTexture2Placeholder,
+            },
+          ],
+        }}
+      />
       <Profile
-        sectionRef={details}
-        visible={visibleSections.includes(details.current)}
-        id="details"
+        sectionRef={aboutSection}
+        visible={visibleSections.includes(aboutSection.current)}
+        id="about"
+      />
+      <Testimonials
+        sectionRef={testimonialsSection}
+        visible={visibleSections.includes(testimonialsSection.current)}
+        id="testimonials"
+      />
+      <Partners
+        sectionRef={partnersSection}
+        visible={visibleSections.includes(partnersSection.current)}
+        id="partners"
+      />
+      <MobileApp
+        sectionRef={mobileAppSection}
+        visible={visibleSections.includes(mobileAppSection.current)}
+        id="mobile-app"
       />
       <Footer />
     </div>

@@ -148,9 +148,52 @@
   opacity: 1;
 }
 
+.profile__join {
+  margin-top: var(--space3XL);
+}
+
+.profile__join-title {
+  font-size: calc((32 / 16) * 1rem);
+  margin-bottom: var(--spaceL);
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationL);
+  
+  @media (--mediaTablet) {
+    & {
+      font-size: calc((24 / 16) * 1rem);
+    }
+  }
+}
+
+.profile__join-title--entered {
+  opacity: 1;
+}
+
+.profile__join-text {
+  margin-bottom: var(--spaceM);
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationL);
+}
+
+.profile__join-text--entered {
+  opacity: 1;
+}
+
+.profile__image {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity var(--durationM) ease var(--durationL);
+}
+
+.profile__image--entered {
+  opacity: 1;
+}
+
 .profile__button {
   opacity: 0;
   transition: opacity var(--durationXL) ease var(--durationL);
+  margin-top: var(--spaceL);
 }
 
 .profile__button--entered {

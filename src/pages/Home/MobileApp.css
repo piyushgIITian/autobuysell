@@ -1,0 +1,142 @@
+.mobile-app {
+  width: 100%;
+  min-height: 60vh;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--colorBackgroundLight);
+
+  @media (--mediaTablet) {
+    & {
+      padding-top: 50px;
+      height: auto;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (--mediaMobile) {
+    & {
+      margin-top: 0;
+      padding-top: 60px;
+      padding-left: 25px;
+      padding-right: 25px;
+      overflow-x: hidden;
+    }
+  }
+}
+
+.mobile-app__content {
+  max-width: var(--maxWidthL);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space2XL);
+  align-items: center;
+  
+  @media (--mediaTablet) {
+    & {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+}
+
+.mobile-app__text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-app__title {
+  margin-bottom: var(--spaceM);
+  opacity: 0;
+  transform: translateY(var(--spaceM));
+  transition: opacity var(--durationL) ease, transform var(--durationL) ease;
+}
+
+.mobile-app__title--entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-app__subtitle {
+  margin-bottom: var(--spaceXL);
+  opacity: 0;
+  transform: translateY(var(--spaceM));
+  transition: opacity var(--durationL) ease 0.1s, transform var(--durationL) ease 0.1s;
+}
+
+.mobile-app__subtitle--entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-app__stores {
+  display: flex;
+  gap: var(--spaceL);
+  
+  @media (--mediaTablet) {
+    & {
+      justify-content: center;
+    }
+  }
+  
+  @media (--mediaMobile) {
+    & {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.mobile-app__store {
+  opacity: 0;
+  transform: translateY(var(--spaceM));
+  transition: opacity var(--durationL) ease, transform var(--durationL) ease;
+}
+
+.mobile-app__store--apple {
+  transition-delay: 0.2s;
+}
+
+.mobile-app__store--google {
+  transition-delay: 0.3s;
+}
+
+.mobile-app__store--entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-app__store-img {
+  max-width: 180px;
+  height: auto;
+  
+  @media (--mediaMobile) {
+    & {
+      max-width: 160px;
+    }
+  }
+}
+
+.mobile-app__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-app__image {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateY(var(--spaceL));
+  transition: opacity var(--durationL) ease 0.4s, transform var(--durationL) ease 0.4s;
+}
+
+.mobile-app__image--entered {
+  opacity: 1;
+  transform: translateY(0);
+}

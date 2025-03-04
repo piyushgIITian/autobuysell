@@ -43,11 +43,12 @@
     "three": "^0.125.0"
   },
   "scripts": {
-    "start": "react-scripts start --no-sandbox",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start --no-sandbox",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start --no-sandbox",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build ",
-    "postbuild": "react-snap ",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'"

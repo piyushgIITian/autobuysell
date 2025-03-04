@@ -1,38 +1,40 @@
 export const navLinks = [
   {
-    label: 'Works',
+    label: 'Features',
     pathname: '/',
-    hash: '#project-1',
+    hash: '#features',
   },
   {
-    label: 'Details',
+    label: 'About',
     pathname: '/',
-    hash: '#details',
+    hash: '#about',
   },
-  // {
-  //   label: 'Articles',
-  //   pathname: '/articles',
-  // },
   {
-    label: 'Contact',
-    pathname: '/contact',
+    label: 'Testimonials',
+    pathname: '/',
+    hash: '#testimonials',
+  },
+  {
+    label: 'Partners',
+    pathname: '/',
+    hash: '#partners',
   },
 ];
 
 export const socialLinks = [
   {
     label: 'Twitter',
-    url: 'https://twitter.com/piyushgautamtg/',
+    url: 'https://twitter.com/',
     icon: 'twitter',
   },
   {
     label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/piyush-gautam-tg/',
+    url: 'https://www.linkedin.com/',
     icon: 'figma',
   },
   {
     label: 'Github',
-    url: 'https://github.com/piyushgiitian',
+    url: 'https://github.com/',
     icon: 'github',
   },
 ];

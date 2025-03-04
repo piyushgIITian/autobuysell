@@ -7,9 +7,6 @@ import DecoderText from 'components/DecoderText';
 import Divider from 'components/Divider';
 import Image from 'components/Image';
 import Section from 'components/Section';
-import ProfileImg from 'assets/profile.jpg';
-import ProfileImgLarge from 'assets/profile-large.jpg';
-import ProfileImgPlaceholder from 'assets/profile-placeholder.jpg';
 import { reflow } from 'utils/transition';
 import { media } from 'utils/style';
 import Heading from 'components/Heading';
@@ -23,25 +20,19 @@ const ProfileText = ({ status, titleId }) => (
       level={3}
       id={titleId}
     >
-      <DecoderText text="Hi there" start={status !== 'exited'} delay={500} />
+      <DecoderText text="Who We are" start={status !== 'exited'} delay={500} />
     </Heading>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      I’m Piyush Gautam, currently I am learning backend and actively looking for backend development roles. You can refer to my linkedin profile at {' '}
-      <Link href="https://www.linkedin.com/in/piyush-gautam-tg">LinkedIn</Link>. My skills include Machine Learning, Deep Learning, Computer vision, FullStack Development, 
-      Game development, and virtual reality. Being comfortable with code allows me to rapidly
-      prototype and validate experiences. If you're interested in the tools and software I
-      use check out my <Link href="/uses">uses page</Link>.
+      Revolutionize the world of algorithmic trading with Autobuysell! One of the unique & automated trading bot brimmed with diverse strategies. Autobuysell is expertly crafted to execute buy & sell orders across various financial markets, simultaneously deploying an array of trading tactics.
     </Text>
     <Text
       className={classNames('profile__description', `profile__description--${status}`)}
       size="l"
     >
-      In my spare time I like to play Dota 2, watch netflix, and{' '}
-      make blogs. I’m always up for collaborating
-      on new projects, so feel free to drop me a text.
+      Using dynamic methodologies, the bot aspires to capitalize on opportunities within a variety of assets and market situations, ultimately seeking to maximize profits. A multifaceted approach not only bolsters the bot's likelihood of success but also effectively spreads risk, making it an invaluable tool for traders.
     </Text>
   </Fragment>
 );
@@ -63,14 +54,34 @@ const Profile = ({ id, visible, sectionRef }) => {
           <div className="profile__content">
             <div className="profile__column">
               <ProfileText status={status} titleId={titleId} />
-              <Button
-                secondary
-                className={classNames('profile__button', `profile__button--${status}`)}
-                href="/contact"
-                icon="send"
-              >
-                Send me a message
-              </Button>
+              <div className="profile__join">
+                <Heading
+                  className={classNames('profile__join-title', `profile__join-title--${status}`)}
+                  level={4}
+                >
+                  Join the Autobuysell Revolution!!
+                </Heading>
+                <Text
+                  className={classNames('profile__join-text', `profile__join-text--${status}`)}
+                  size="l"
+                >
+                  Don't let the unpredictable & volatile market conditions affect your trading performance & profitability. Take charge of your own trading destiny with Autobuysell, the innovative and dynamic platform that enables you to harness the power of algorithmic trading.
+                </Text>
+                <Text
+                  className={classNames('profile__join-text', `profile__join-text--${status}`)}
+                  size="l"
+                >
+                  With Autobuysell, you can make informed, data-driven & strategic decisions that will boost your trading results as well as confidence. Don't settle for less than you deserve. Upgrade your trading experience today & see the difference for yourself.
+                </Text>
+                <Button
+                  className={classNames('profile__button', `profile__button--${status}`)}
+                  href="https://autobuysell.io/register"
+                  iconHoverShift
+                  iconEnd="arrowRight"
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
             <div className="profile__column">
               <div className="profile__tag" aria-hidden>
@@ -86,21 +97,15 @@ const Profile = ({ id, visible, sectionRef }) => {
                     `profile__tag-text--${status}`
                   )}
                 >
-                  About Me
+                  About Us
                 </div>
               </div>
               <div className="profile__image-wrapper">
-                <Image
-                  reveal
-                  delay={100}
-                  placeholder={ProfileImgPlaceholder}
-                  srcSet={`${ProfileImg} 480w, ${ProfileImgLarge} 960w`}
-                  sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="ME"
+                <img
+                  className={classNames('profile__image', `profile__image--${status}`)}
+                  src="https://autobuysell.io/assets/home/img/design.jpeg"
+                  alt="Trading design"
                 />
-                {/* <KatakanaProfile
-                  className={classNames('profile__svg', `profile__svg--${status}`)}
-                /> */}
               </div>
             </div>
           </div>
